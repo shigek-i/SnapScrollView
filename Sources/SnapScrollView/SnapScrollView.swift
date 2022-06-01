@@ -23,8 +23,8 @@ public struct SnapScrollView<SelectionValue: Hashable, Content: View>: View {
     }
 }
 
-extension View {
-    public func snapScrollTag(_ value: Int) -> some View {
+public extension View {
+    func snapScrollTag(_ value: Int) -> some View {
         self.anchorPreference(key: AnchorPreferenceKey.self, value: .bounds, transform: { [value: .init(bounds: $0)] })
     }
 }
