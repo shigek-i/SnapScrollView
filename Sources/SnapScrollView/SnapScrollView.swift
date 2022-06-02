@@ -9,7 +9,7 @@ public struct SnapScrollView<SelectionValue: Hashable, Content: View>: View {
     @State private var width: CGFloat = 0
     @State private var currentOffset: CGFloat = 0
     
-    public init(selection: Binding<SelectionValue>, content: @escaping () -> Content) {
+    public init(selection: Binding<SelectionValue>, @ViewBuilder content: () -> Content) {
         self._selection = selection
         self.content = content()
     }
